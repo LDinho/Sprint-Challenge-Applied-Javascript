@@ -8,23 +8,31 @@ class Carousel {
     this.allImages = this.carousel.querySelectorAll('img')
 
     this.index = 0;
-    // this.index = 1;
-    console.log('WHAT IS THIS:', this.index)
-    this.allImages[this.index].style.display="block";
 
     this.rightBtn.addEventListener('click', ()=>{
+      this.hide();
       this.index = this.index + 1;
-      this.allImages[this.index].style.display="block";
-      console.log(this.index);
+      this.show()
     })
 
     this.leftBtn.addEventListener('click', ()=>{
+      this.hide();
       this.index = this.index - 1;
-      this.allImages[this.index].style.display="block";
-      console.log(this.index);
+      this.show()
     })
     console.log('INDEX:',this.index);
+    this.show();
 
+  }
+
+  hide() {
+    this.allImages[this.index].style.display="none";
+    console.log('INDEX:',this.index);
+  }
+
+  show() {
+    this.allImages[this.index].style.display="block";
+    console.log('INDEX:',this.index);
   }
 
 }
